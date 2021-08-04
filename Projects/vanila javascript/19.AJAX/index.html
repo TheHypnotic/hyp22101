@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX BABY!!!</title>
+    <style>
+      body {
+        width: 1080px;
+        margin: 0 auto;
+        background: #f4f4f4;
+      }
+      button {
+        margin: 20px 58vh;
+      }
+      .user {
+        display: flex;
+        margin: 10px;
+        padding: 10px 0 10px 10px;
+        background: #707070;
+        color: #fff;
+      }
+      .user:hover {
+        opacity: 0.7;
+      }
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div><button id="btn-1">Action Baby!</button></div>
+    <div id="content"></div>
+    <script>
+      document.getElementById("btn-1").addEventListener("click", getApi);
+      function getApi() {
+        data = new XMLHttpRequest();
+        data.open("get", "https://api.github.com/users", true);
+        data.onload = function () {
+          let users = JSON.parse(this.responseText);
+
+          let output = "";
+          for (let i in users) {
+            output += `<div class = 'user'>
+                    <img src='${users[i].avatar_url}' width = '70' height= '70'>
+                <ul>
+                    <li>ID: ${users[i].id}<li>
+                    <li>Login: ${users[i].login}<li>
+                        </ul> </div>`;
+          }
+          document.querySelector("#content").innerHTML = output;
+        };
+        data.send();
+      }
+    </script>
+  </body>
+</html>
