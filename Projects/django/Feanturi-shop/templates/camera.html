@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feanturi</title>
+    <link rel="stylesheet" href="./static/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="menu-bar">
+      <i class="fas fa-bars fa-2x"></i>
+    </div>
+    <nav class="navigation">
+      <div class="container nav">
+        <h3 class="brand-name">Feanturi</h3>
+        <ul class="navbar">
+          <li><a href="{% url 'home' %}">صفحه اصلی</a></li>
+          <li><a href=".{% url 'sp' %}">موبایل</a></li>
+          <li><a href="{% url 'laptop' %}">لپ تاپ</a></li>
+          <li><a href="{% url 'camera' %}">دوربین</a></li>
+          <li><a href="{% url 'giftcard' %}">گیفت کارت</a></li>
+          <li><a href="{% url 'aboutus' %}">تماس با ما</a></li>
+        </ul>
+        <form class="search-bar">
+          <input type="text" placeholder="جستجو..." />
+          <i class="fas fa-search magnifier-icon fa-2x"></i>
+        </form >
+        <i id="icon-mode" class="fas fa-shopping-cart fa-2x icon-mode"></i>
+      </div>
+    </nav>
+
+        <section class="cart">
+      <div class="cart-container card">
+      <h1>لیست خرید</h1>
+      <div class="cart-close-icon">
+        <i class="far fa-times-circle fa-3x"></i>
+      </div>
+      <div class="cart-item-container">
+        <div class="cart-list-item">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    
+        <section class="camera-showcase">
+          <div class="container">
+            <div class="flex">
+              <img src="./static/img/camera showcase 2.jpg" class="card sc-img" />
+              <div class="card">
+                <img src="./static/img/camera.jpg" alt="" />
+                <h2>دوربین عکاسی Bridge کانن</h2>
+                <h3>۹٫۵۰۰٫۰۰۰ تومان</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <section class="home-ms">
+      <div class="container">
+        <h1>دوربین ها</h1>
+        <div class="grid-4 sp-container">
+        </div>
+      </div>
+    </section>
+
+
+    <footer>
+      <div class="container flex">
+        <ul class="navbar">
+          <li><a href="{% url 'home' %}">صفحه اصلی</a></li>
+          <li><a href=".{% url 'sp' %}">موبایل</a></li>
+          <li><a href="{% url 'laptop' %}">لپ تاپ</a></li>
+          <li><a href="{% url 'camera' %}">دوربین</a></li>
+          <li><a href="{% url 'giftcard' %}">گیفت کارت</a></li>
+          <li><a href="{% url 'aboutus' %}">تماس با ما</a></li>
+        </ul>
+        <h3>Feanturi &copy; 2021</h3>
+      </div>
+    </footer>
+
+    <div class="scroll-top dont-display" >
+      <i><img src="./static/img/noun_Arrow_2268748.png" alt="" /></i
+    </div>
+    <script src="./static/app.js"></script>
+  </body>
+</html>
